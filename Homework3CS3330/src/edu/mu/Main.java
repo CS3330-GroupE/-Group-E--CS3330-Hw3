@@ -1,7 +1,7 @@
 package edu.mu;
 import edu.mu.storemanager.StockManagerSingleton;
 
-public class main {
+public class Main {
 	
 	public static void main(String[] args) {
 		

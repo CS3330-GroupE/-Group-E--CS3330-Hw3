@@ -3,8 +3,6 @@ package edu.mu.storemanager;
 //base class (parent)
 public class MediaProduct{
 	
-	
-
 	protected String type;
 	protected String title;
 	protected double price;
