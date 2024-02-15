@@ -5,8 +5,11 @@ public class main {
 	
 	public static void main(String[] args) {
 		
-		StockManagerSingleton stock = new StockManagerSingleton();
+		StockManagerSingleton stock = StockManagerSingleton.getInstance();
 		stock.initializeStock();
+		
+		//Will remove just using to display the array
+		stock.displayStock();
 	}
 
 }
