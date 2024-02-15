@@ -85,4 +85,25 @@ public class StockManagerSingleton {
 		}
 	}
 	
+	//adds item to the stock
+	public boolean addItem(MediaProduct Product) {
+		
+		//if statement tests if the method was successful
+		if(stock.add(Product)) {
+			return true;
+		};
+		
+		return false;
+	}
+	
+	//removes item from the stock
+	public boolean removeItem(MediaProduct Product) {
+		
+		//if statement tests if the method was successful
+		if(stock.remove(Product)) {
+			return true;
+		};
+		return false;
+	}
+	
 }
