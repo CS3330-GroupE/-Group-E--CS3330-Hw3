@@ -165,6 +165,24 @@ public class StockManagerSingleton {
 
     	return vinylRecordsList;
 	}
+
+	//gets tape record media products as array list
+	public ArrayList<TapeRecordProduct>getTapeRecordList(ArrayList<MediaProduct> productList){
+		//create array
+				ArrayList<TapeRecordProduct> tapeRecordsList = new ArrayList<>();
+				
+				//iterates through mediaProduct, compares Price, adds matching products to array
+				for (MediaProduct product : productList) {
+					if (product.getType().equals("Tape")) {
+						//creates new object for matches
+			    		TapeRecordProduct TRList = new TapeRecordProduct(product.getType(), product.getTitle(), product.getPrice(), product.getYear(), product.getGenre());
+			    		//adds new object to list
+						tapeRecordsList.add(new TapeRecordProduct(TRList));
+					}
+				}
+
+		    return tapeRecordsList;
+		}
 	
 	
     //will update price of given item
