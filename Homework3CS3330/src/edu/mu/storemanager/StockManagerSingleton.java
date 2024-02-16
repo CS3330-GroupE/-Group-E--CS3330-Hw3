@@ -198,7 +198,23 @@ public class StockManagerSingleton {
         //will return false if above statement fails
         return false;
     }
-    
-	
-		
+
+	//Saves updated inventory back to CSV file
+    public boolean saveStock() {
+    	try (FileWriter writer = new FileWriter(inventoryFilePath)) {
+            //write each product to the file in CSV format
+            for (MediaProduct product : stock) {
+            	//Bluhm reference https://www.geeksforgeeks.org/java-string-format-method-with-examples/
+                writer.write(String.format("%s,%s,%.2f,%d,%s%n", product.getType(), product.getTitle(), product.getPrice(), product.getYear(), product.getGenre()));
+            }
+            System.out.println("Save successful!");
+            return true;
+        }
+    	//error catching
+    	catch(IOException error) {
+    		System.out.println("Save unsuccessful");
+            error.printStackTrace();
+            return false;
+	}
+    }	
 }
