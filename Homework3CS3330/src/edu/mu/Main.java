@@ -12,7 +12,7 @@ public class Main {
 		stock.initializeStock();
 		
 		//Will remove just using to display the array
-		stock.displayStock();
+		stock.printListOfMediaProduct(stock.stockArray());
 		
 		
 		//test variables
@@ -30,7 +30,7 @@ public class Main {
 		};
 		
 		//shows method works
-		stock.displayStock();
+		stock.printListOfMediaProduct(stock.stockArray());
 		
 		//tests method to see if working properly
 		if(stock.removeItem(testProduct)){
@@ -38,7 +38,7 @@ public class Main {
 		};
 		
 		//shows method works
-		stock.displayStock();
+		stock.printListOfMediaProduct(stock.stockArray());
 	}
 
 }

@@ -31,16 +31,16 @@ public class StockManagerSingleton {
 
 	public boolean initializeStock() {
 		
-		System.out.println("Attempting to read inventory file.");
+		System.out.println("Attempting to read inventory file.\n");
 		try {
 			//check if file exists
 			File file = new File(inventoryFilePath);
 			if(!file.exists()) {
-				System.out.println("Inventory file does not exist");
+				System.out.println("Inventory file does not exist\n");
 				return false;
 			}
 			
-			System.out.println("Inventory file exists!");
+			System.out.println("Inventory file exists!\n");
 			
 			Scanner fileIn = new Scanner(new FileInputStream(inventoryFilePath));
 			
@@ -72,22 +72,19 @@ public class StockManagerSingleton {
 			return false;
 		}
 		
-	
-		
-		
 		return true;
 		
 	}
-	//temp to display items in inventory
-	public void displayStock() {
+//prints the given array's elements
+	public void printListOfMediaProduct(ArrayList<MediaProduct> stock){
 		for (MediaProduct elements : stock) {
 			System.out.println(elements);
 		}
 	}
 	
+	
 	//adds item to the stock
 	public boolean addItem(MediaProduct Product) {
-		
 		//if statement tests if the method was successful
 		if(stock.add(Product)) {
 			return true;
@@ -103,7 +100,12 @@ public class StockManagerSingleton {
 		if(stock.remove(Product)) {
 			return true;
 		};
+		
 		return false;
 	}
 	
+	
+	public ArrayList<MediaProduct> stockArray() {
+		return stock;
+	}	
 }
