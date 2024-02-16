@@ -17,7 +17,8 @@ public class Main {
 		String testName = "Metallica";
 		String testAlbum = "Kill em' All";
 		int testYear = 1983;
-		float testPrice = (float) 24.90;
+		double testPrice = 24.99;
+		double newPrice = 20.99;
 		
 		//test product
 		MediaProduct testProduct = new MediaProduct(testName, testAlbum, testPrice, testYear, Genre.ROCK);
@@ -25,7 +26,18 @@ public class Main {
 		//tests method to see if working properly
 		if(stock.addItem(testProduct)) {
 			System.out.print("\nSuccess!\n\n");
+			stock.printListOfMediaProduct(stock.productList());
 		};
+		
+		 //tests method to see if working properly
+        if(stock.updateItemPrice(testProduct, newPrice)){
+            System.out.print("\nSuccess!\n\n");
+            //shows method works
+            stock.printListOfMediaProduct(stock.productList());
+        }
+        else{
+            System.out.print("\nFAILED!");
+        };
 		
 		//shows method works
 		stock.printListOfMediaProduct(stock.productList());
@@ -41,6 +53,9 @@ public class Main {
 		//calls method to create array of CD products from the inventory
 		//currently displays all objects in the arrays type to test method success
 		stock.getCDRecordsList(stock.productList());
+		
+		
+		
 	}
 
 }
