@@ -69,35 +69,6 @@ public class MediaProduct{
 		this.genre = genre;
 	}
 
-	//subclass
-	class VinylRecordProduct extends MediaProduct{
-		public VinylRecordProduct(String type, String title, double price, int year, Genre genre) {
-			super(type,title, price, year, genre);
-		 }
-		//copy constructor 
-		public VinylRecordProduct(VinylRecordProduct copy) {
-			super(copy);
-		}
-	}
-	//subclass
-	class CDRecordProduct extends MediaProduct{
-		public CDRecordProduct(String type, String title, double price, int year, Genre genre) {
-			super(type, title, price, year, genre);
-		 }
-		//copy constructor
-		public CDRecordProduct (CDRecordProduct copy) {
-			super(copy);
-		} 
-	}
-	//subclass
-	class TapeRecordProduct extends MediaProduct{
-		public TapeRecordProduct(String type, String title, double price, int year, Genre genre) {
-			super(type, title, price, year, genre);
-		 }//copy constructor
-		public TapeRecordProduct(TapeRecordProduct copy) {
-			super(copy);
-		}
-	}
 	
 	//toString method 
 	@Override

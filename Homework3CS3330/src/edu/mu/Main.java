@@ -1,7 +1,5 @@
 package edu.mu;
-import edu.mu.storemanager.Genre;
-import edu.mu.storemanager.MediaProduct;
-import edu.mu.storemanager.StockManagerSingleton;
+import edu.mu.storemanager.*;
 
 
 public class Main {
@@ -12,7 +10,7 @@ public class Main {
 		stock.initializeStock();
 		
 		//Will remove just using to display the array
-		stock.printListOfMediaProduct(stock.stockArray());
+		stock.printListOfMediaProduct(stock.productList());
 		
 		
 		//test variables
@@ -30,7 +28,7 @@ public class Main {
 		};
 		
 		//shows method works
-		stock.printListOfMediaProduct(stock.stockArray());
+		stock.printListOfMediaProduct(stock.productList());
 		
 		//tests method to see if working properly
 		if(stock.removeItem(testProduct)){
@@ -38,7 +36,11 @@ public class Main {
 		};
 		
 		//shows method works
-		stock.printListOfMediaProduct(stock.stockArray());
+		stock.printListOfMediaProduct(stock.productList());
+		
+		//calls method to create array of CD products from the inventory
+		//currently displays all objects in the arrays type to test method success
+		stock.getCDRecordsList(stock.productList());
 	}
 
 }

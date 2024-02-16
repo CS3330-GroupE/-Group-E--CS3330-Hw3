@@ -28,7 +28,6 @@ public class StockManagerSingleton {
 //creates an arraylist with a dynamic capacity
     ArrayList<MediaProduct> stock = new ArrayList<>();
     
-
 	public boolean initializeStock() {
 		
 		System.out.println("Attempting to read inventory file.\n");
@@ -48,7 +47,6 @@ public class StockManagerSingleton {
 			if(fileIn.hasNextLine()) {
 				fileIn.nextLine();
 			}
-			
 			
 			while(fileIn.hasNextLine()) {
 				String inventoryFileLine = fileIn.nextLine();
@@ -75,9 +73,10 @@ public class StockManagerSingleton {
 		return true;
 		
 	}
-//prints the given array's elements
-	public void printListOfMediaProduct(ArrayList<MediaProduct> stock){
-		for (MediaProduct elements : stock) {
+	
+	//prints the given array's elements
+	public void printListOfMediaProduct(ArrayList<MediaProduct> array){
+		for (MediaProduct elements : array) {
 			System.out.println(elements);
 		}
 	}
@@ -104,8 +103,33 @@ public class StockManagerSingleton {
 		return false;
 	}
 	
-	
-	public ArrayList<MediaProduct> stockArray() {
+	//method to return the arraylist 
+	public ArrayList <MediaProduct> productList() {
 		return stock;
-	}	
+	}
+	
+	//method to access the inventory and make a new array of CD object copies. 
+	public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList) {
+		
+		//initialized array
+	    ArrayList<CDRecordProduct> cdProductList = new ArrayList<>();
+			//loops through elements in given inventory and compares type names and if equals, makes a new object, which is then cloned and added to CD array
+		    for (MediaProduct elements : productList) {
+				
+		    	//conditional to check type strings
+		    	if (elements.getType().equals("CD")) {
+					
+		    		//makes new obj
+		    		CDRecordProduct originalCDobj = new CDRecordProduct(elements.getType(), elements.getTitle(), elements.getPrice(), elements.getYear(), elements.getGenre());
+					
+		    		//makes copy and adds to array
+		    		cdProductList.add(new CDRecordProduct(originalCDobj));
+					
+					//this can be removed just for testing
+					System.out.println(originalCDobj.getType());
+				}
+			}
+		    
+			return cdProductList;
+		}
 }
