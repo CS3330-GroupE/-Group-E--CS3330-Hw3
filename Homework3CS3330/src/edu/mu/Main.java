@@ -80,4 +80,6 @@ public class Main {
         
         	stock.getTapeRecordList(stock.productList());
 
+		//saveStock
+        	stock.saveStock();
 }
