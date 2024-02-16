@@ -2,6 +2,8 @@ package edu.mu.storemanager;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -188,15 +190,26 @@ public class StockManagerSingleton {
     //will update price of given item
     public boolean updateItemPrice(MediaProduct product, double newPrice) {
        
+    	boolean updateStatus = false;
+    	
+    	//this will write items into stock
     	for(MediaProduct elements : stock) {
-            //checks to see if method implemented succeeds
             if(product.equals(elements)) {
                 elements.setPrice(newPrice);
-            };
-            
+                updateStatus = true;
+            }; 
         }
-        //will return false if above statement fails
-        return false;
+    	
+    	//this loop will check to see if the above loop changes price correctly
+    	for(MediaProduct elements : stock) {
+    		if(product.equals(elements) && elements.getPrice() != newPrice) {
+    			updateStatus = false;
+    		}
+    	}
+    	
+    	
+        //will return false if above statement fails, true otherwise
+        return updateStatus;
     }
 
 	//Saves updated inventory back to CSV file

@@ -1,4 +1,6 @@
 package edu.mu;
+import java.util.ArrayList;
+
 import edu.mu.storemanager.*;
 
 
@@ -64,11 +66,11 @@ public class Main {
 		
         	stock.getMediaProductBelowPrice(15);
 
-		}
+		
 
 		//test getVinylRecordList
-        	for (MediaProduct line : stock.getVinylRecordList(stock.productList())) {
-            		System.out.println(line);
+        	for (MediaProduct line1 : stock.getVinylRecordList(stock.productList())) {
+            		System.out.println(line1);
         	}
         
         	stock.getVinylRecordList(stock.productList());
@@ -82,4 +84,7 @@ public class Main {
 
 		//saveStock
         	stock.saveStock();
+        	
+        
+	}
 }
