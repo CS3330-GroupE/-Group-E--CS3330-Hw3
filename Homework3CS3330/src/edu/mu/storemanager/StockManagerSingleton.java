@@ -107,6 +107,21 @@ public class StockManagerSingleton {
 	public ArrayList <MediaProduct> productList() {
 		return stock;
 	}
+
+	//Get media products below a given maxPrice
+	public ArrayList<MediaProduct> getMediaProductBelowPrice(int maxPrice){
+		//create array
+		ArrayList<MediaProduct> mediaProductsCheaperThan = new ArrayList<>();
+			
+			//iterates through mediaProduct, compares Price, adds matching products to array
+			for (MediaProduct product : stock) {
+				if (product.getPrice() < maxPrice) {
+					mediaProductsCheaperThan.add(product);
+				}
+			}
+
+	    return mediaProductsCheaperThan;
+	}
 	
 	//method to access the inventory and make a new array of CD object copies. 
 	public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList) {
