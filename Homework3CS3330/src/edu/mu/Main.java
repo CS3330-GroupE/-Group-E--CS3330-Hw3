@@ -61,10 +61,16 @@ public class Main {
         for (MediaProduct product : MPCheaperThan) {
             	System.out.println(product);
         }
-        
+		
         stock.getMediaProductBelowPrice(15);
-		
-		
+
 	}
+
+	//test getVinylRecordList
+        for (MediaProduct line : stock.getVinylRecordList(stock.productList())) {
+            System.out.println(line);
+        }
+        
+        stock.getVinylRecordList(stock.productList());
 
 }
