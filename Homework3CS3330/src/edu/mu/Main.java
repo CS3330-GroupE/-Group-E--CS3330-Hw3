@@ -89,6 +89,12 @@ public class Main {
         	}
         
         	stock.getTapeRecordList(stock.productList());
+        	
+        //test getCDRecordList
+        System.out.println("\n\nGetting CD Record List:");
+        	for(MediaProduct line : stock.getCDRecordsList(stock.productList())) {
+        		System.out.println(line);
+        	}
 
 		//saveStock
         	stock.saveStock();
