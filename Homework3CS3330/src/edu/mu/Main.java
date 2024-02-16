@@ -53,7 +53,16 @@ public class Main {
 		//calls method to create array of CD products from the inventory
 		//currently displays all objects in the arrays type to test method success
 		stock.getCDRecordsList(stock.productList());
-		
+
+	//test getMediaProductBelowPrice
+	ArrayList<MediaProduct> MPCheaperThan = new ArrayList<>();
+	MPCheaperThan = stock.getMediaProductBelowPrice(15);
+
+        for (MediaProduct product : MPCheaperThan) {
+            	System.out.println(product);
+        }
+        
+        stock.getMediaProductBelowPrice(15);
 		
 		
 	}
