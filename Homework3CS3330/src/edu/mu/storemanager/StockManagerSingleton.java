@@ -63,7 +63,7 @@ public class StockManagerSingleton {
 				
 				//creating MediaProduct objects and adding to array
 				MediaProduct mediaObj = new MediaProduct(type,title,price,year,genre);
-				stock.add(mediaObj);
+				addItem(mediaObj);
 			}
 		}
 		
