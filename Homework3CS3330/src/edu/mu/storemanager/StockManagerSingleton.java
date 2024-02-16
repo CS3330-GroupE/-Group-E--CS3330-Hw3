@@ -120,7 +120,7 @@ public class StockManagerSingleton {
 				}
 			}
 
-	    return mediaProductsCheaperThan;
+	return mediaProductsCheaperThan;
 	}
 	
 	//method to access the inventory and make a new array of CD object copies. 
@@ -147,6 +147,24 @@ public class StockManagerSingleton {
 		    
 			return cdProductList;
 		}
+
+	//gets vinyl media products as array list
+	public ArrayList<VinylRecordProduct>getVinylRecordList(ArrayList<MediaProduct> productList){
+		//create array
+		ArrayList<VinylRecordProduct> vinylRecordsList = new ArrayList<>();
+		
+		//iterates through mediaProduct, compares Price, adds matching products to array
+		for (MediaProduct product : productList) {
+			if (product.getType().equals("Vinyl")) {
+				//creates new object for matches
+	    		VinylRecordProduct VRList = new VinylRecordProduct(product.getType(), product.getTitle(), product.getPrice(), product.getYear(), product.getGenre());
+	    		//adds new object to list
+				vinylRecordsList.add(new VinylRecordProduct(VRList));
+			}
+		}
+
+    	return vinylRecordsList;
+	}
 	
 	
     //will update price of given item
