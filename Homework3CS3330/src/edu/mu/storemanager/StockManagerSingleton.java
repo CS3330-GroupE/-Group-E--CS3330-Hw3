@@ -143,7 +143,7 @@ public class StockManagerSingleton {
 		    		cdProductList.add(new CDRecordProduct(originalCDobj));
 					
 					//this can be removed just for testing
-					System.out.println(originalCDobj.getType());
+					//System.out.println(originalCDobj.getType());
 				}
 			}
 		    
