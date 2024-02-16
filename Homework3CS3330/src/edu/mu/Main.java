@@ -54,23 +54,30 @@ public class Main {
 		//currently displays all objects in the arrays type to test method success
 		stock.getCDRecordsList(stock.productList());
 
-	//test getMediaProductBelowPrice
-	ArrayList<MediaProduct> MPCheaperThan = new ArrayList<>();
-	MPCheaperThan = stock.getMediaProductBelowPrice(15);
+		//test getMediaProductBelowPrice
+		ArrayList<MediaProduct> MPCheaperThan = new ArrayList<>();
+		MPCheaperThan = stock.getMediaProductBelowPrice(15);
 
-        for (MediaProduct product : MPCheaperThan) {
-            	System.out.println(product);
-        }
+        	for (MediaProduct product : MPCheaperThan) {
+            		System.out.println(product);
+        	}
 		
-        stock.getMediaProductBelowPrice(15);
+        	stock.getMediaProductBelowPrice(15);
 
-	}
+		}
 
-	//test getVinylRecordList
-        for (MediaProduct line : stock.getVinylRecordList(stock.productList())) {
-            System.out.println(line);
-        }
+		//test getVinylRecordList
+        	for (MediaProduct line : stock.getVinylRecordList(stock.productList())) {
+            		System.out.println(line);
+        	}
         
-        stock.getVinylRecordList(stock.productList());
+        	stock.getVinylRecordList(stock.productList());
+
+		//test getTapeRecordList
+        	for (MediaProduct line : stock.getTapeRecordList(stock.productList())) {
+            		System.out.println(line);
+        	}
+        
+        	stock.getTapeRecordList(stock.productList());
 
 }
