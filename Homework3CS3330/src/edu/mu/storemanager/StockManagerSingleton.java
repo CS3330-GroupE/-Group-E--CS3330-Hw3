@@ -136,12 +136,13 @@ public class StockManagerSingleton {
 	
     //will update price of given item
     public boolean updateItemPrice(MediaProduct product, double newPrice) {
-        for(MediaProduct elements : stock) {
+       
+    	for(MediaProduct elements : stock) {
             //checks to see if method implemented succeeds
             if(product.equals(elements)) {
                 elements.setPrice(newPrice);
-                return true;
             };
+            
         }
         //will return false if above statement fails
         return false;
